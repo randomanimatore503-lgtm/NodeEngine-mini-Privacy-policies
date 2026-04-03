@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — NodeEngine Mini | LeadBridge Systems</title>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #080b12;
+  --bg2: #0d1117;
+  --white: #f0f4ff;
+  --muted: #64748b;
+  --muted2: #94a3b8;
+  --teal: #06b6d4;
+  --teal2: #14b8a6;
+  --blue: #3b82f6;
+  --grad: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #14b8a6 100%);
+  --border: rgba(255,255,255,0.06);
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Cabinet Grotesk', sans-serif;
+  min-height: 100vh;
+}
+
+/* Ambient orb */
+.orb {
+  position: fixed; width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59,130,246,0.08), transparent 70%);
+  filter: blur(80px);
+  top: -150px; left: -100px;
+  pointer-events: none; z-index: 0;
+}
+
+/* Nav */
+nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 56px;
+  background: rgba(8,11,18,0.8);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+}
+
+.nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+
+.nav-name {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 18px; font-weight: 600; letter-spacing: -0.02em;
+}
+.nav-name .lb { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.nav-name .sys { color: var(--muted2); font-weight: 400; font-size: 13px; display: block; margin-top: -2px; }
+
+.nav-back {
+  font-size: 13px; color: var(--muted2);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.nav-back:hover { color: var(--white); }
+
+main {
+  max-width: 720px; margin: 0 auto;
+  padding: 80px 40px 120px;
+  position: relative; z-index: 1;
+}
+
+/* Header */
+.page-kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(59,130,246,0.08);
+  border: 1px solid rgba(59,130,246,0.2);
+  border-radius: 100px;
+  padding: 5px 16px; margin-bottom: 28px;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: #60a5fa;
+}
+
+.page-title {
+  font-family: 'Clash Display', sans-serif;
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 700; line-height: 1.02;
+  letter-spacing: -0.03em; margin-bottom: 16px;
+}
+
+.grad-word {
+  background: var(--grad);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.page-meta {
+  font-size: 13px; color: var(--muted);
+  margin-bottom: 56px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Policy sections */
+.policy-section {
+  margin-bottom: 48px;
+  padding: 36px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  transition: border-color 0.3s;
+}
+
+.policy-section:hover { border-color: rgba(59,130,246,0.2); }
+
+.section-num {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-bottom: 16px;
+}
+
+.num-badge {
+  width: 28px; height: 28px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(6,182,212,0.15));
+  border: 1px solid rgba(59,130,246,0.25);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 13px; font-weight: 700; color: #60a5fa;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 19px; font-weight: 600;
+  letter-spacing: -0.01em; color: var(--white);
+}
+
+.section-body {
+  font-size: 15px; font-weight: 300;
+  color: var(--muted2); line-height: 1.8;
+}
+
+.section-body strong { color: var(--white); font-weight: 500; }
+
+.section-body a {
+  color: var(--teal);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(6,182,212,0.3);
+  transition: border-color 0.2s;
+}
+.section-body a:hover { border-color: var(--teal); }
+
+/* Data list */
+.data-list {
+  list-style: none; margin-top: 14px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+
+.data-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14px; color: var(--muted2);
+}
+
+.data-list li::before {
+  content: '→';
+  color: var(--teal2);
+  font-size: 14px; flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Services list */
+.services-list {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 14px;
+}
+
+.service-tag {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 12px; font-weight: 500;
+  color: var(--muted2); letter-spacing: 0.02em;
+}
+
+/* Contact box */
+.contact-box {
+  background: linear-gradient(135deg, rgba(59,130,246,0.07), rgba(6,182,212,0.05));
+  border: 1px solid rgba(59,130,246,0.2);
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-top: 16px;
+  display: flex; align-items: center; gap: 16px;
+}
+
+.contact-ico {
+  width: 40px; height: 40px; flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(6,182,212,0.1));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+
+.contact-label { font-size: 12px; color: var(--muted); margin-bottom: 3px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
+.contact-val { font-size: 15px; color: var(--white); font-weight: 500; }
+
+/* Footer note */
+.footer-note {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  font-size: 13px; color: var(--muted);
+  line-height: 1.7; text-align: center;
+}
+
+.footer-note strong { color: var(--muted2); }
+
+@media (max-width: 600px) {
+  nav { padding: 16px 20px; }
+  main { padding: 48px 20px 80px; }
+  .policy-section { padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="orb"></div>
+
+<nav>
+  <a class="nav-brand" href="/">
+    <svg width="28" height="28" viewBox="0 0 36 36" fill="none">
+      <defs>
+        <linearGradient id="ng" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#3b82f6"/>
+          <stop offset="50%" stop-color="#06b6d4"/>
+          <stop offset="100%" stop-color="#14b8a6"/>
+        </linearGradient>
+      </defs>
+      <path d="M9 12 C9 7 13 5 17 6.5 C21 8 22 12 20 16 C18 20 13 21 9.5 18.5 C6 16 7 13 9 12Z" stroke="url(#ng)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M16 20 C14.5 16 17 12 21 12 C25 12 27 16 25 20 C23 24 18 26 14.5 23 C11 20 14 21 16 20Z" stroke="url(#ng)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="nav-name">
+      <span><span class="lb">LeadBridge</span> Systems</span>
+      <span class="sys">NodeEngine Mini</span>
+    </div>
+  </a>
+  <a class="nav-back" href="/">← Back to home</a>
+</nav>
+
+<main>
+
+  <div class="page-kicker">Legal</div>
+
+  <h1 class="page-title">
+    Privacy <span class="grad-word">Policy</span>
+  </h1>
+
+  <div class="page-meta">
+    NodeEngine Mini · LeadBridge Systems · Last updated: April 2026 · India
+  </div>
+
+  <!-- 1 -->
+  <div class="policy-section">
+    <div class="section-num">
+      <div class="num-badge">1</div>
+      <div class="section-title">What we collect</div>
+    </div>
+    <div class="section-body">
+      When a lead interacts with NodeEngine Mini via WhatsApp, we collect only what's needed to qualify them for the real estate agent:
+      <ul class="data-list">
+        <li>Name and WhatsApp number</a></li>
+        <li>Property preferences — budget, location, timeline</li>
+        <li>Scheduled call details</li>
+        <li>Instagram username, if the lead reaches out via Instagram</li>
+        <li>Conversation history to maintain context across sessions</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="policy-section">
+    <div class="section-num">
+      <div class="num-badge">2</div>
+      <div class="section-title">How we use it</div>
+    </div>
+    <div class="section-body">
+      All collected information is used <strong>solely to qualify and route leads</strong> to the real estate agent using our service. This includes:
+      <ul class="data-list">
+        <li>Generating intelligent, context-aware WhatsApp replies</li>
+        <li>Remembering lead preferences across conversations</li>
+        <li>Scoring lead seriousness (Hot / Warm / Cold)</li>
+        <li>Sending the agent a daily lead summary report via email</li>
+      </ul>
+      <br>
+      We do <strong>not</strong> use your data for advertising, profiling, or any purpose outside lead qualification.
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="policy-section">
+    <div class="section-num">
+      <div class="num-badge">3</div>
+      <div class="section-title">Who sees your data</div>
+    </div>
+    <div class="section-body">
+      Your data is shared with <strong>only one party</strong> — the real estate agent you contacted. It is never sold, rented, or shared with any other business or individual.
+      <br><br>
+      To deliver this service, we work with the following external services:
+      <div class="services-list">
+        <span class="service-tag">n8n (automation)</span>
+        <span class="service-tag">MongoDB (database)</span>
+        <span class="service-tag">OpenAI / Claude / Gemini</span>
+        <span class="service-tag">Mappstore (WhatsApp API)</span>
+        <span class="service-tag">Meta (WhatsApp & Instagram)</span>
+      </div>
+      <br>
+      Each of these services processes only the minimum data required to function and operates under their own privacy standards.
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="policy-section">
+    <div class="section-num">
+      <div class="num-badge">4</div>
+      <div class="section-title">Where your data is stored</div>
+    </div>
+    <div class="section-body">
+      All lead data is stored in <strong>MongoDB servers located in India</strong> — specifically in Mumbai. Your data never leaves Indian infrastructure without necessity, keeping it close to home and within Indian jurisdiction.
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="policy-section">
+    <div class="section-num">
+      <div class="num-badge">5</div>
+      <div class="section-title">Your rights & data deletion</div>
+    </div>
+    <div class="section-body">
+      You have the right to request access to your data or ask us to delete it at any time. We'll action your request promptly with no questions asked.
+      <div class="contact-box">
+        <div class="contact-ico">✉️</div>
+        <div>
+          <div class="contact-label">Contact us at</div>
+          <div class="contact-val">leadbridgesystems@gmail.com</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    This policy applies to <strong>NodeEngine Mini</strong> by LeadBridge Systems.<br>
+    By interacting with our WhatsApp system, you agree to this policy.<br>
+    We may update this policy as our service evolves. Changes will be reflected on this page.
+  </div>
+
+</main>
+
+</body>
+</html>
